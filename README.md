@@ -1,8 +1,20 @@
 # AWS Morning Brief Agent
 
-An Always-On AI Agent built with AWS.
+An Always-On AI Agent built using AWS services.
 
-## Services Used
+## Architecture
+
+EventBridge
+    ↓
+AWS Lambda
+    ↓
+Amazon Bedrock (Nova Lite)
+    ↓
+Generate Morning Brief
+    ↓
+Amazon S3
+
+## AWS Services Used
 
 - Amazon Bedrock (Nova Lite)
 - AWS Lambda
@@ -10,41 +22,17 @@ An Always-On AI Agent built with AWS.
 - Amazon S3
 - IAM
 
-## Architecture
-
-EventBridge
-    ↓
-Lambda
-    ↓
-Amazon Bedrock (Nova Lite)
-    ↓
-Generate Morning Brief
-    ↓
-Save to Amazon S3
-
 ## Features
 
-- Generates a daily morning brief
-- AI-generated motivational quote
+- Generates a morning brief every day
+- Motivational quote
 - Productivity tip
 - AWS learning tip
-- Automatically runs every day at 6:00 AM IST
-- Saves output to Amazon S3
+- Automatically saves output to Amazon S3
 
-## Sample Output
+## Schedule
 
-Morning Brief
-
-Good morning!
-
-Motivational Quote:
-"Success is not final..."
-
-Productivity Tip:
-Start with the hardest task first.
-
-AWS Learning:
-Explore AWS CloudFormation...
+Runs every day at **6:00 AM IST** using Amazon EventBridge.
 
 ## Author
 
